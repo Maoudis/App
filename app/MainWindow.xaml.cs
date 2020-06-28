@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,15 +25,35 @@ namespace app
         public MainWindow()
         {
             InitializeComponent();
+            ColorStringList();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             RaceDropdown_RaceChanged(this.RaceDropdown, null);
             ClassDropdown_ClassChanged(this.ClassDropdown, null);
+            
+        }
+
+        private void ColorStringList()
+        {
+            List<string> colors = new List<string>();
+
+            System.Drawing.Color MyColor;
+            foreach (string ColorName in Enum.GetNames(typeof(System.Drawing.KnownColor)))
+            {
+                MyColor = System.Drawing.Color.FromName(ColorName);
+                if (MyColor.IsSystemColor == true)
+                    continue;
+                colors.Add(ColorName.ToString());
+            }
+
+            foreach (String I in colors.Skip(1))
+            {
+                EyeColourDropDown.Items.Add(I);
+            }
         }
         
-
         private void RaceDropdown_RaceChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.RaceInfoDisplay == null)
@@ -60,5 +81,10 @@ namespace app
         {
             this.NameTextBox.Text = "";
         }
+        private void ClearAgeButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.AgeTextBox.Text = "";
+        }
     }
 }
+
