@@ -25,7 +25,7 @@ namespace app
         public MainWindow()
         {
             InitializeComponent();
-            ColorStringList();
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -35,24 +35,7 @@ namespace app
             
         }
 
-        private void ColorStringList()
-        {
-            List<string> colors = new List<string>();
-
-            System.Drawing.Color MyColor;
-            foreach (string ColorName in Enum.GetNames(typeof(System.Drawing.KnownColor)))
-            {
-                MyColor = System.Drawing.Color.FromName(ColorName);
-                if (MyColor.IsSystemColor == true)
-                    continue;
-                colors.Add(ColorName.ToString());
-            }
-
-            foreach (String I in colors.Skip(1))
-            {
-                EyeColourDropDown.Items.Add(I);
-            }
-        }
+        
         
         private void RaceDropdown_RaceChanged(object sender, SelectionChangedEventArgs e)
         {

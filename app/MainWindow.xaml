@@ -16,30 +16,40 @@
             <Setter Property="Margin" Value="2" />
         </Style>
         
+        <Style TargetType="Border" >
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        
         <Style TargetType="Button">            
             <Setter Property="FontFamily" Value="century gothic" />
             <Setter Property="Margin" Value="2" />
         </Style>
         
         <Style TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="FontSize" Value="15" />
             <Setter Property="FontFamily" Value="century gothic" />
-            <Setter Property="Margin" Value="2" />
+            <Setter Property="Margin" Value="1"/>
+
         </Style>
         
         <Style TargetType="ComboBox">
             <Setter Property="FontFamily" Value="century gothic" />
             <Setter Property="Margin" Value="2" />
+            
         </Style>
         
         <Style TargetType="ComboBoxItem">
             <Setter Property="FontFamily" Value="century gothic" />
             <Setter Property="Margin" Value="2" />
+            
         </Style>
     </Window.Resources>
     <!--#endregion-->
-    
-    <Border Background="LightGray"  Padding="10">
+
+    <Border Background="DarkRed"  Padding="5" BorderBrush="Black" BorderThickness="5">
 
         <Grid>
             <!--#region Grid Definitions-->
@@ -56,7 +66,7 @@
             <!--#endregion-->
 
             <!--#region Box 1 Race and Class-->
-            <Border Margin="2,2,2,2" Background="Gray">
+            <Border Background="Gray">
                 <Grid Grid.Row="0" Grid.Column="0">
                     
                     <!--#region Grid Definitions-->
@@ -73,9 +83,9 @@
                         
                         <!--#region Race and Class Selection-->
                         <StackPanel Margin="2" Grid.Row="0">
+                            <TextBlock HorizontalAlignment="Center" TextDecorations="Underline" FontWeight="Bold" Text="Race and class" Margin="2,2,2,15"/>
 
-                            <TextBlock FontWeight="Bold" Text="Race and class" Margin="2,2,2,15"/>
-
+                            
                             <!--Rcae-->
                             <TextBlock Text="Race" />
                             <ComboBox SelectedIndex="0" x:Name="RaceDropdown"  SelectionChanged="RaceDropdown_RaceChanged">
@@ -111,65 +121,105 @@
             </Border>
             <!--#endregion-->
 
-            <!--#region Box 2 Player details-->
-            <Border Background="Gray" Margin="2" Grid.Column="1">
-                <StackPanel>
-                    <!--#region Enter Name Age-->
-                    <Grid>
-                        <!--#region Grid Definitions-->
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="2*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
+
+            <Border Background="Gray" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>                        
+                    </Grid.RowDefinitions>
+                    <!--#region Box 2 Player details-->
+                    <StackPanel Grid.Row="0">
+                        <!--#region Enter Character Details-->
+                        <TextBlock Text="Character Details" HorizontalAlignment="Center" TextDecorations="Underline" FontWeight="Bold"/>
+                        <Grid>
+                            <!--#region Grid Definitions-->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                        <!--#endregion-->
-                        
-                        <!--#region Enter Name or clear text box-->
-                            <TextBlock Text="Character Name" Grid.Column="0" />
-                            <TextBox Text="Enter Name!" x:Name="NameTextBox" MaxLength="15" Grid.Column="1" />
-                            <Button Content="Clear" Click="ClearNameButton_Click" Grid.Column="2" />
+                            <!--#endregion-->
+                            
+                            <!--#region Enter Name or clear text box-->
+                                <TextBlock Text="Character Name" Grid.Column="0" />
+                                <TextBox Text="Enter Name!" x:Name="NameTextBox" MaxLength="15" Grid.Column="1" />
+                                <Button Content="Clear" Click="ClearNameButton_Click" Grid.Column="2" />
+                                <!--#endregion -->
+                            
+                            <!--#region Enter Age or clear text box-->
+                            <TextBlock Text="Character age" Grid.Column="0" Grid.Row="1" />
+                            <TextBox Text="Enter Age!" x:Name="AgeTextBox" MaxLength="15" Grid.Column="1" Grid.Row="1" />
+                            <Button Content="Clear" Click="ClearAgeButton_Click" Grid.Column="2" Grid.Row="1" />
                             <!--#endregion -->
-                        
-                        <!--#region Enter Age or clear text box-->
-                        <TextBlock Text="Character age" Grid.Column="0" Grid.Row="1" />
-                        <TextBox Text="Enter Age!" x:Name="AgeTextBox" MaxLength="15" Grid.Column="1" Grid.Row="1" />
-                        <Button Content="Clear" Click="ClearAgeButton_Click" Grid.Column="2" Grid.Row="1" />
-                        <!--#endregion -->
-                    </Grid>
+                            
+                            <!--#region Gender-->
+                            <TextBlock Text="Gender" Grid.Row="2"/>
+                            <ComboBox SelectedIndex="0" x:Name="GenderDropDown" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2">
+                                <ComboBoxItem Content="Male"/>
+                                <ComboBoxItem Content="Female"/>
+                            </ComboBox>
+                            <!--#endregion-->
+                            
+                            <!--#region Eye Color-->
+                            <TextBlock Text="Eye Color" Grid.Row="3"/>
+                            <ComboBox SelectedIndex="0" x:Name="EyeDropDown" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                                <ComboBoxItem Content="Amber"/>
+                                <ComboBoxItem Content="Blue"/>
+                                <ComboBoxItem Content="Brown"/>
+                                <ComboBoxItem Content="Gray"/>
+                                <ComboBoxItem Content="Green"/>
+                                <ComboBoxItem Content="Hazel"/>
+                                <ComboBoxItem Content="Red"/>
+                                <ComboBoxItem Content="Purple"/>
+                                <ComboBoxItem Content="Black"/>
+                                <ComboBoxItem Content="Cloudy White"/>
+                            </ComboBox>
+                            <!--#endregion-->
+                            
+                            <!--#region Build-->
+                            <TextBlock Text="Build" Grid.Row="5"/>
+                            <ComboBox SelectedIndex="0" x:Name="BuildDropDown" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
+                                <ComboBoxItem Content="Small"/>
+                                <ComboBoxItem Content="Medium"/>
+                                <ComboBoxItem Content="Large"/>
+                            </ComboBox>
+                            <!--#endregion-->
+                            
+                            <!--#region Skin/scale/Fur/Carapace Primery Color-->
+                            <TextBlock Text="Skin color?" Grid.Row="4"/>
+                            <ComboBox SelectedIndex="0" x:Name="SkinDropDown" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+                            <!--#endregion-->
+                            
+                            <!--#region Hair/marking/patern/bioluminescent Secondery Color-->
+                            <TextBlock Text="Hair color" Grid.Row="6"/>
+                            <ComboBox SelectedIndex="0" x:Name="HairDropDown" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+                            <!--#endregion-->
+                        </Grid>
+                    </StackPanel>
                     <!--#endregion-->
-                    
-                    <!--#region Enter Description-->
-                    <Grid>
-                        <!--#region 4x2 Grid Description-->
+                    <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
-                        <!--#endregion-->
-                        
-                        <!--#region -->
-                        <TextBlock TextWrapping="Wrap" Text="Eye Color"/>
-                        <ComboBox SelectedIndex="0" x:Name="EyeColourDropDown" Grid.Column="1"/>
-
-                        <TextBlock TextWrapping="Wrap" Text="Skin color?" Grid.Column="2"/>
-                        <TextBlock TextWrapping="Wrap" Text="Build" Grid.Row="1"/>
-                        <TextBlock TextWrapping="Wrap" Text="Hair color" Grid.Row="1" Grid.Column="2"/>
+                        <TextBlock Text="Profession" Grid.Row="1" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Center"/>
+                        <TextBox Text="Profession" x:Name="ProfessionInfoDisplay" Background="LightGray"  IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="2, 4, 2, 2"/>
                     </Grid>
-                    <!--#endregion-->
-
-                </StackPanel>
+                </Grid>
+                
+                
             </Border>
-            <!--#endregion-->
+            
         </Grid>
     </Border>
     
