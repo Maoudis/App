@@ -1,0 +1,147 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    
+
+
+    <!--Sonic Silver background for ComboBox, TextBox-->
+    <SolidColorBrush x:Key="backgroundforComboBoxTextBox" Color="#7A7A7A"/>
+
+    <!--Spanish Gray background for Buttoms -->
+    <SolidColorBrush x:Key="ButtonBackground" Color="#999999"/>
+
+    <!--Black Border for Border, ComboBox, TextBox, Button color, Maouse Over Border Color, Clicked Border-->
+    <SolidColorBrush x:Key="Black" Color="#000000"/>
+
+    <!--Blood Red for Arrow, WindowBackgroun-->
+    <SolidColorBrush x:Key="Blood Red" Color="#520700"/>
+
+    <!--Davys Grey Mause over for Sonic Silver-->
+    <SolidColorBrush x:Key="MauseOverOrClickforSonicSilver" Color="#474747" />
+
+
+    <!--Dark Sienna Maouse Over for Blood Red-->
+    <SolidColorBrush x:Key="MaouseOverOrClickForBloodRed" Color="#290300"/>
+
+    <!--Copper Background for the panels on the window"#B87528"-->
+    <SolidColorBrush x:Key="BackgroundForWindowSections" Color="#B87528"/>
+    
+    <!--TexBox Background-->
+    <SolidColorBrush x:Key="TextBoxGey" Color="#5C5C5C"/>
+
+
+    <Style x:Key="StanderdBorderStyle" TargetType="Border">
+        <Setter Property="Background" Value="{StaticResource BackgroundForWindowSections}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+        <Setter Property="BorderThickness" Value="4"/>
+    </Style>
+
+    <Style x:Key="StanderdTextBlock" TargetType="TextBlock" >
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontFamily" Value="century gothic" />
+        <Setter Property="Margin" Value="2" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="century gothic" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+    </Style>
+
+    <Style x:Key="StandardTextBox" TargetType="TextBox">
+        <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Background" Value="{StaticResource TextBoxGey}"/>
+        <Setter Property="TextWrapping" Value="Wrap"
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontFamily" Value="century gothic" />
+        <Setter Property="Margin" Value="1"/>
+    </Style>
+
+
+    
+
+    <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="IsTabStop" Value="false"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="ClickMode" Value="Press"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <!--Border of main box-->
+                    <Border x:Name="templateRoot" Background="{StaticResource backgroundforComboBoxTextBox}" BorderThickness="2"  BorderBrush="{StaticResource Black}" SnapsToDevicePixels="true">
+                        <!--Border of arrow-->
+                        <Border x:Name="splitBorder" BorderThickness="2" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+                            <!--Draws the arrow-->
+                            <Path x:Name="arrow" Data="M16 20 L16 24 L32 48 L48 24 L48 20 L44 16 S32 4 20 16 Z" Fill="{StaticResource Blood Red}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform"/>
+                        </Border>
+                    </Border>
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Fill" TargetName="arrow" Value="{StaticResource MaouseOverOrClickForBloodRed}"/>
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MauseOverOrClickforSonicSilver}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource Black}"/>
+                        </MultiDataTrigger>
+
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Fill" TargetName="arrow" Value="{StaticResource MaouseOverOrClickForBloodRed}"/>
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MauseOverOrClickforSonicSilver}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource Black}"/>
+                        </MultiDataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="ComboBoxCustom" TargetType="{x:Type ComboBox}">
+        <Grid x:Name="templateRoot" SnapsToDevicePixels="true">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--something to do with dropdown-->
+            <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
+
+                <!--The Border of the ComboBoxItems-->
+                <Border x:Name="dropDownBorder" Background="{StaticResource backgroundforComboBoxTextBox}" BorderThickness="1" BorderBrush="{StaticResource Black}"  MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                    <!--Lets User Scroll the dropdown list-->
+                    <ScrollViewer x:Name="DropDownScrollViewer">
+                        <!--ComboBox Items-->
+                        <Grid x:Name="grid">
+                            <ItemsPresenter x:Name="ItemsPresenter" KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Border>
+
+            </Popup>
+
+            <ToggleButton x:Name="toggleButton" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Grid.ColumnSpan="2" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource ComboBoxToggleButton}"/>
+            <!--Display chosen item in main box-->
+            <ContentPresenter x:Name="contentPresenter" Content="{TemplateBinding SelectionBoxItem}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" ContentStringFormat="{TemplateBinding SelectionBoxItemStringFormat}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" IsHitTestVisible="false" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Grid>
+
+    </ControlTemplate>
+
+
+
+
+</ResourceDictionary>
+ 

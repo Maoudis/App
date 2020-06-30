@@ -6,50 +6,24 @@
         xmlns:local="clr-namespace:app"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
-        Title="Character Creation" Height="800" Width="800">
+        Title="Character Creation" Height="850" Width="850">
 
-    <!--#region Styles-->
+
+
+
     <Window.Resources>
-        <Style TargetType="TextBlock" >
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontFamily" Value="century gothic" />
-            <Setter Property="Margin" Value="2" />
-        </Style>
-        
-        <Style TargetType="Border" >
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="BorderThickness" Value="2"/>
-        </Style>
-        
-        <Style TargetType="Button">            
-            <Setter Property="FontFamily" Value="century gothic" />
-            <Setter Property="Margin" Value="2" />
-        </Style>
-        
-        <Style TargetType="TextBox">
-            <Setter Property="BorderBrush" Value="Black"/>
-            <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontFamily" Value="century gothic" />
-            <Setter Property="Margin" Value="1"/>
-
-        </Style>
-        
         <Style TargetType="ComboBox">
+            <Setter Property="Template" Value="{DynamicResource ComboBoxCustom}"/>
+            <Setter Property="FontFamily" Value="century gothic" />
+        </Style>
+        <Style x:Key="StandardComboBoxItem" TargetType="ComboBoxItem">
             <Setter Property="FontFamily" Value="century gothic" />
             <Setter Property="Margin" Value="2" />
-            
         </Style>
-        
-        <Style TargetType="ComboBoxItem">
-            <Setter Property="FontFamily" Value="century gothic" />
-            <Setter Property="Margin" Value="2" />
-            
-        </Style>
-    </Window.Resources>
-    <!--#endregion-->
 
-    <Border Background="DarkRed"  Padding="5" BorderBrush="Black" BorderThickness="5">
+    </Window.Resources>
+
+    <Border Background="#520700"  Padding="5" BorderBrush="Black" BorderThickness="5">
 
         <Grid>
             <!--#region Grid Definitions-->
@@ -66,8 +40,8 @@
             <!--#endregion-->
 
             <!--#region Box 1 Race and Class-->
-            <Border Background="Gray">
-                <Grid Grid.Row="0" Grid.Column="0">
+            <Border Style="{StaticResource StanderdBorderStyle}">
+                <Grid  Grid.Row="0" Grid.Column="0">
                     
                     <!--#region Grid Definitions-->
                     <Grid Margin="2" Grid.Column="1">
@@ -83,12 +57,12 @@
                         
                         <!--#region Race and Class Selection-->
                         <StackPanel Margin="2" Grid.Row="0">
-                            <TextBlock HorizontalAlignment="Center" TextDecorations="Underline" FontWeight="Bold" Text="Race and class" Margin="2,2,2,15"/>
+                            <TextBlock Style="{StaticResource StanderdTextBlock}" TextDecorations="Underline" FontWeight="Bold" Text="Race and class" Margin="2,2,2,15"/>
 
                             
                             <!--Rcae-->
-                            <TextBlock Text="Race" />
-                            <ComboBox SelectedIndex="0" x:Name="RaceDropdown"  SelectionChanged="RaceDropdown_RaceChanged">
+                            <TextBlock Style="{StaticResource StanderdTextBlock}" Text="Race" />
+                            <ComboBox Background="Red" SelectedIndex="0" x:Name="RaceDropdown"  SelectionChanged="RaceDropdown_RaceChanged">
                                 <ComboBoxItem x:Name="HumanRaceInfo" Content="The Humans"/>
                                 <ComboBoxItem x:Name="InsectoidRaceInfo" Content="The insectoids" />
                                 <ComboBoxItem x:Name="LizardfolkRaceInfo" Content="The Lizardfolk" />
@@ -107,13 +81,13 @@
                         <!--#endregion-->
                         
                         <!--#region Info Boxes-->
-                        <TextBox Text="Stat Bonuses" Grid.Row="1" x:Name="BonusInfoDisplay" Background="LightGray"  IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="Stat Bonuses" Grid.Row="1" x:Name="BonusInfoDisplay" Background="#5C5C5C"  IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
                         
                         <!--Displays the race info-->
-                        <TextBox Text="race"  x:Name="RaceInfoDisplay" Background="LightGray" IsReadOnly="True" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="race"  x:Name="RaceInfoDisplay" Background="#5C5C5C" IsReadOnly="True" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
                         
                         <!--Displays the class info-->
-                        <TextBox Text="Class" x:Name="ClassInfoDisplay" Background="LightGray"  IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="Class" x:Name="ClassInfoDisplay" Background="#5C5C5C"  IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
                         
                         <!--#endregion-->
                     </Grid>
@@ -122,7 +96,7 @@
             <!--#endregion-->
 
 
-            <Border Background="Gray" Grid.Column="1">
+            <Border Style="{StaticResource StanderdBorderStyle}" Grid.Column="1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -132,7 +106,7 @@
                     <StackPanel Grid.Row="0">
                         <!--#region Enter Character Details-->
                         <TextBlock Text="Character Details" HorizontalAlignment="Center" TextDecorations="Underline" FontWeight="Bold"/>
-                        <Grid>
+                        <Grid Margin="2">
                             <!--#region Grid Definitions-->
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="2*" />
@@ -205,15 +179,15 @@
                             <ComboBox SelectedIndex="0" x:Name="HairDropDown" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
                             <!--#endregion-->
                         </Grid>
-                    </StackPanel>
+                    </StackPanel >
                     <!--#endregion-->
-                    <Grid Grid.Row="1">
+                    <Grid Margin="2" Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Profession" Grid.Row="1" FontWeight="Bold" TextDecorations="Underline" HorizontalAlignment="Center"/>
-                        <TextBox Text="Profession" x:Name="ProfessionInfoDisplay" Background="LightGray"  IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="2, 4, 2, 2"/>
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="Profession" x:Name="ProfessionInfoDisplay" IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="2, 4, 2, 2" TextChanged="ProfessionInfoDisplay_TextChanged"/>
                     </Grid>
                 </Grid>
                 
