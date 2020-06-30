@@ -147,10 +147,19 @@
                                 <ComboBoxItem Content="Female"/>
                             </ComboBox>
                             <!--#endregion-->
+                            
+                            <!--#region Build-->
+                            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Build" Grid.Row="3"/>
+                            <ComboBox SelectedIndex="0" x:Name="BuildDropDown" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                                <ComboBoxItem Content="Small"/>
+                                <ComboBoxItem Content="Medium"/>
+                                <ComboBoxItem Content="Large"/>
+                            </ComboBox>
+                            <!--#endregion-->
 
                             <!--#region Eye Color-->
-                            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Eye Color" Grid.Row="3"/>
-                            <ComboBox SelectedIndex="0" x:Name="EyeDropDown" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2">
+                            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Eye Color" Grid.Row="4"/>
+                            <ComboBox SelectedIndex="0" x:Name="EyeDropDown" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2">
                                 <ComboBoxItem Content="Amber"/>
                                 <ComboBoxItem Content="Blue"/>
                                 <ComboBoxItem Content="Brown"/>
@@ -164,18 +173,10 @@
                             </ComboBox>
                             <!--#endregion-->
 
-                            <!--#region Build-->
-                            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Build" Grid.Row="5"/>
-                            <ComboBox SelectedIndex="0" x:Name="BuildDropDown" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
-                                <ComboBoxItem Content="Small"/>
-                                <ComboBoxItem Content="Medium"/>
-                                <ComboBoxItem Content="Large"/>
-                            </ComboBox>
-                            <!--#endregion-->
 
                             <!--#region Skin/scale/Fur/Carapace Primery Color-->
-                            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Skin color?" Grid.Row="4"/>
-                            <ComboBox SelectedIndex="0" x:Name="SkinDropDown" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+                            <TextBlock Style="{StaticResource StandardTextBlock}" Text="Skin color?" Grid.Row="5"/>
+                            <ComboBox SelectedIndex="0" x:Name="SkinDropDown" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
                             <!--#endregion-->
 
                             <!--#region Hair/marking/patern/bioluminescent Secondery Color-->

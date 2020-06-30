@@ -8,10 +8,15 @@ namespace app
     {
         string Name;
         int Age;
+        string Gender;
         int Health;
+        int HealthRegenRate;
         int Mana;
+        int ManaRegenRate;
         int Defence;
-        
+        string Build;
+        string HairColor;
+        string EyrColor;
 
     }
 }

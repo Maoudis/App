@@ -53,7 +53,7 @@ namespace app
             var combo = (ComboBox)sender;//Var Combo = (type of ComboBox)From the Sender of RaceDropdown_RaceChanged
             var value = (ComboBoxItem)combo.SelectedItem;//var value = (type of ComboBoxitem)the selected item of the comboBox
             string race = (string)value.Name;//Gets the name of the ComboBoxItem           
-            string DisplatInfo = File.ReadAllText($@"{currentDir}\RaceClassInfo\Race\{race}.txt");
+            string DisplatInfo = File.ReadAllText($@"{currentDir}\RaceClassInfo\Race\{race}\{race}RaceInfo.txt");
             this.RaceInfoDisplay.Text = (string)DisplatInfo;
         }
 
@@ -87,17 +87,23 @@ namespace app
 
         private void Doctor_Click(object sender, RoutedEventArgs e)
         {
-
+            Button button = (Button)sender;
+            string name = button.Name;
+            this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
         }
 
         private void ShopKeeper_Click(object sender, RoutedEventArgs e)
         {
-
+            Button button = (Button)sender;
+            string name = button.Name;
+            this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
         }
 
         private void Kight_Click(object sender, RoutedEventArgs e)
         {
-
+            Button button = (Button)sender;
+            string name = button.Name;
+            this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
         }
     }
 }

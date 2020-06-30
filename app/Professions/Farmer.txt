@@ -1,1 +1,5 @@
 ﻿You worked as a farmer on the famely farm.
+You gain an income of 20 per week
+you gain a +2 in Hp regen
+
+
