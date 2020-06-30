@@ -2,71 +2,73 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    
-
-
-    <!--Sonic Silver background for ComboBox, TextBox-->
+    <!--#region Color Sonic Silver background for ComboBox, TextBox-->
     <SolidColorBrush x:Key="backgroundforComboBoxTextBox" Color="#7A7A7A"/>
-
-    <!--Spanish Gray background for Buttoms -->
+    <!--#endregion-->
+    <!--#region Color Spanish Gray background for Buttoms -->
     <SolidColorBrush x:Key="ButtonBackground" Color="#999999"/>
-
-    <!--Black Border for Border, ComboBox, TextBox, Button color, Maouse Over Border Color, Clicked Border-->
+    <!--#endregion-->
+    <!--#region Color Black-->
     <SolidColorBrush x:Key="Black" Color="#000000"/>
-
-    <!--Blood Red for Arrow, WindowBackgroun-->
+    <!--#endregion-->
+    <!--#region Color Blood Red for Arrow, WindowBackgroun-->
     <SolidColorBrush x:Key="Blood Red" Color="#520700"/>
-
-    <!--Davys Grey Mause over for Sonic Silver-->
+    <!--#endregion-->
+    <!--#region Color Davys Grey Mause over for Color Sonic Silver-->
     <SolidColorBrush x:Key="MauseOverOrClickforSonicSilver" Color="#474747" />
-
-
-    <!--Dark Sienna Maouse Over for Blood Red-->
+    <!--#endregion-->
+    <!--#region Color Dark Sienna Maouse Over for Color Blood Red-->
     <SolidColorBrush x:Key="MaouseOverOrClickForBloodRed" Color="#290300"/>
-
-    <!--Copper Background for the panels on the window"#B87528"-->
-    <SolidColorBrush x:Key="BackgroundForWindowSections" Color="#B87528"/>
+    <!--#endregion-->
+    <!--#region Color Copper Middle Yellow Red-->
+    <SolidColorBrush x:Key="BackgroundForWindowSections" Color="#E2B179"/>
+    <!--#endregion-->
+    <!--#region Color TextBoxGey -->
+    <SolidColorBrush x:Key="ColorTextBoxGey" Color="#5C5C5C"/>
+    <!--#endregion-->
     
-    <!--TexBox Background-->
-    <SolidColorBrush x:Key="TextBoxGey" Color="#5C5C5C"/>
-
-
-    <Style x:Key="StanderdBorderStyle" TargetType="Border">
+    <!--#region Style StandardBorder-->
+    <Style x:Key="StandardBorderStyle" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource BackgroundForWindowSections}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
         <Setter Property="BorderThickness" Value="4"/>
     </Style>
-
-    <Style x:Key="StanderdTextBlock" TargetType="TextBlock" >
-
+    <!--#endregion-->
+    <!--#region Style StandardTextBlock-->
+    <Style x:Key="StandardTextBlock" TargetType="TextBlock" >
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="2" />
         <Setter Property="TextDecorations" Value="UnderLine"/>
     </Style>
-
-    <Style TargetType="Button">
+    <!--#endregion-->
+    <!--#region Style StandardButton-->
+    <Style x:Key="StyleStandardButton" TargetType="Button">
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="2" />
         <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
     </Style>
-
+    <!--#endregion-->
+    <!--#region Style StandardTextBox-->
     <Style x:Key="StandardTextBox" TargetType="TextBox">
         <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="Background" Value="{StaticResource TextBoxGey}"/>
+        <Setter Property="Background" Value="{StaticResource ColorTextBoxGey}"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         
         <Setter Property="FontSize" Value="15" />
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="1"/>
+        
     </Style>
-
-
+    <!--#endregion -->
+    <!--#region Style Image As Button-->
     
+    <!--#endregion-->
+    <!--#region Style StandardComboBox-->
 
     <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -143,8 +145,6 @@
 
     </ControlTemplate>
 
-
-
-
+    <!--#endregion-->
 </ResourceDictionary>
  

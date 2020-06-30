@@ -68,6 +68,11 @@ namespace app
         {
             this.AgeTextBox.Text = "";
         }
+
+        private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
 
