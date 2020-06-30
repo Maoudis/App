@@ -23,7 +23,7 @@
 
     </Window.Resources>
     <!--#endregion-->
-
+    <!--#region Character Setup-->
     <Border Background="#520700"  Padding="5" BorderBrush="Black" BorderThickness="5">
 
         <Grid>
@@ -64,10 +64,10 @@
                             <!--Rcae-->
                             <TextBlock Style="{StaticResource StandardTextBlock}" Text="Race" />
                             <ComboBox Background="Red" SelectedIndex="0" x:Name="RaceDropdown"  SelectionChanged="RaceDropdown_RaceChanged">
-                                <ComboBoxItem x:Name="HumanRaceInfo" Content="The Humans"/>
-                                <ComboBoxItem x:Name="InsectoidRaceInfo" Content="The insectoids" />
-                                <ComboBoxItem x:Name="LizardfolkRaceInfo" Content="The Lizardfolk" />
-                                <ComboBoxItem x:Name="CanidaesRaceInfo" Content="The Canidaes" />
+                                <ComboBoxItem x:Name="Human" Content="The Humans"/>
+                                <ComboBoxItem x:Name="Insectoid" Content="The insectoids" />
+                                <ComboBoxItem x:Name="Lizardfolk" Content="The Lizardfolk" />
+                                <ComboBoxItem x:Name="Canidaes" Content="The Canidaes" />
                             </ComboBox>
 
                             <!--Class-->
@@ -82,13 +82,13 @@
                         <!--#endregion-->
 
                         <!--#region Info Boxes-->
-                        <TextBox Style="{StaticResource StandardTextBox}" Text="Stat Bonuses" Grid.Row="1" x:Name="BonusInfoDisplay" Background="#5C5C5C"  IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="Stat Bonuses" Grid.Row="1" x:Name="BonusInfoDisplay"  IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
 
                         <!--Displays the race info-->
-                        <TextBox Style="{StaticResource StandardTextBox}" Text="race"  x:Name="RaceInfoDisplay" Background="#5C5C5C" IsReadOnly="True" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="race"  x:Name="RaceInfoDisplay" IsReadOnly="True" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
 
                         <!--Displays the class info-->
-                        <TextBox Style="{StaticResource StandardTextBox}" Text="Class" x:Name="ClassInfoDisplay" Background="#5C5C5C"  IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <TextBox Style="{StaticResource StandardTextBox}" Text="Class" x:Name="ClassInfoDisplay"  IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
 
                         <!--#endregion-->
                     </Grid>
@@ -232,6 +232,7 @@
 
                         <!--#region Profession Info Display-->
                         <TextBox Style="{StaticResource StandardTextBox}" Text="Profession" x:Name="ProfessionInfoDisplay" IsReadOnly="True" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                        <!--#endregion-->
                     </Grid>
                     <!--#endregion-->
                 </Grid>
@@ -241,13 +242,19 @@
             <!--#endregion-->
 
             <!--#region Box 3-->
+            <Border Style="{StaticResource StandardBorderStyle}" Grid.Row="1">
+                
+            </Border>
 
             <!--#endregion-->
 
             <!--#region Box 4-->
+            <Border Style="{StaticResource StandardBorderStyle}" Grid.Row="1" Grid.Column="1">
+
+            </Border>
 
             <!--#endregion-->
         </Grid>
     </Border>
-
+    <!--#endregion-->
 </Window>

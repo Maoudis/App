@@ -2,35 +2,36 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <!--#region Color Sonic Silver background for ComboBox, TextBox-->
-    <SolidColorBrush x:Key="backgroundforComboBoxTextBox" Color="#7A7A7A"/>
-    <!--#endregion-->
-    <!--#region Color Spanish Gray background for Buttoms -->
-    <SolidColorBrush x:Key="ButtonBackground" Color="#999999"/>
-    <!--#endregion-->
+    
     <!--#region Color Black-->
-    <SolidColorBrush x:Key="Black" Color="#000000"/>
+    <SolidColorBrush x:Key="ColorBlack" Color="#000000"/>
     <!--#endregion-->
-    <!--#region Color Blood Red for Arrow, WindowBackgroun-->
-    <SolidColorBrush x:Key="Blood Red" Color="#520700"/>
+    
+    <!--#region Color Gey -->
+    <SolidColorBrush x:Key="ColorQuickSilver" Color="#c2c2c2"/>
     <!--#endregion-->
+    
+    <!--#region Color Blood Red-->
+    <SolidColorBrush x:Key="ColorBloodRed" Color="#520700"/>
+    <!--#endregion-->
+    
+    <!--#region Color Middle Yellow Red-->
+    <SolidColorBrush x:Key="ColorMiddleYellowRed" Color="#E2B179"/>
+    <!--#endregion-->
+    
     <!--#region Color Davys Grey Mause over for Color Sonic Silver-->
-    <SolidColorBrush x:Key="MauseOverOrClickforSonicSilver" Color="#474747" />
+    <SolidColorBrush x:Key="MauseOverOrClickforQuickSilver" Color="#474747"/>
     <!--#endregion-->
+    
     <!--#region Color Dark Sienna Maouse Over for Color Blood Red-->
     <SolidColorBrush x:Key="MaouseOverOrClickForBloodRed" Color="#290300"/>
-    <!--#endregion-->
-    <!--#region Color Copper Middle Yellow Red-->
-    <SolidColorBrush x:Key="BackgroundForWindowSections" Color="#E2B179"/>
-    <!--#endregion-->
-    <!--#region Color TextBoxGey -->
-    <SolidColorBrush x:Key="ColorTextBoxGey" Color="#5C5C5C"/>
     <!--#endregion-->
     
     <!--#region Style StandardBorder-->
     <Style x:Key="StandardBorderStyle" TargetType="Border">
-        <Setter Property="Background" Value="{StaticResource BackgroundForWindowSections}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+        <Setter Property="Margin" Value="2.5"/>
+        <Setter Property="Background" Value="{StaticResource ColorMiddleYellowRed}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
         <Setter Property="BorderThickness" Value="4"/>
     </Style>
     <!--#endregion-->
@@ -47,16 +48,16 @@
     <Style x:Key="StyleStandardButton" TargetType="Button">
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="2" />
-        <Setter Property="Background" Value="{StaticResource ButtonBackground}"/>
+        <Setter Property="Background" Value="{StaticResource ColorQuickSilver}"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
     </Style>
     <!--#endregion-->
     <!--#region Style StandardTextBox-->
     <Style x:Key="StandardTextBox" TargetType="TextBox">
-        <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
         <Setter Property="BorderThickness" Value="2"/>
-        <Setter Property="Background" Value="{StaticResource ColorTextBoxGey}"/>
+        <Setter Property="Background" Value="{StaticResource ColorQuickSilver}"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
         
         <Setter Property="FontSize" Value="15" />
@@ -80,11 +81,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <!--Border of main box-->
-                    <Border x:Name="templateRoot" Background="{StaticResource backgroundforComboBoxTextBox}" BorderThickness="2"  BorderBrush="{StaticResource Black}" SnapsToDevicePixels="true">
+                    <Border x:Name="templateRoot" Background="{StaticResource ColorQuickSilver}" BorderThickness="2"  BorderBrush="{StaticResource ColorBlack}" SnapsToDevicePixels="true">
                         <!--Border of arrow-->
                         <Border x:Name="splitBorder" BorderThickness="2" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
                             <!--Draws the arrow-->
-                            <Path x:Name="arrow" Data="M16 20 L16 24 L32 48 L48 24 L48 20 L44 16 S32 4 20 16 Z" Fill="{StaticResource Blood Red}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform"/>
+                            <Path x:Name="arrow" Data="M16 20 L16 24 L32 48 L48 24 L48 20 L44 16 S32 4 20 16 Z" Fill="{StaticResource ColorBloodRed}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Uniform"/>
                         </Border>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -96,8 +97,8 @@
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}" Value="true"/>
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MauseOverOrClickforSonicSilver}"/>
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource Black}"/>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MauseOverOrClickforQuickSilver}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ColorBlack}"/>
                         </MultiDataTrigger>
 
                         <Trigger Property="IsPressed" Value="true">
@@ -107,8 +108,8 @@
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="true"/>
                             </MultiDataTrigger.Conditions>
-                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MauseOverOrClickforSonicSilver}"/>
-                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource Black}"/>
+                            <Setter Property="Background" TargetName="templateRoot" Value="{StaticResource MauseOverOrClickforQuickSilver}"/>
+                            <Setter Property="BorderBrush" TargetName="templateRoot" Value="{StaticResource ColorBlack}"/>
                         </MultiDataTrigger>
 
                     </ControlTemplate.Triggers>
@@ -126,7 +127,7 @@
             <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
 
                 <!--The Border of the ComboBoxItems-->
-                <Border x:Name="dropDownBorder" Background="{StaticResource backgroundforComboBoxTextBox}" BorderThickness="1" BorderBrush="{StaticResource Black}"  MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                <Border x:Name="dropDownBorder" Background="{StaticResource ColorQuickSilver}" BorderThickness="1" BorderBrush="{StaticResource ColorBlack}"  MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
                     <!--Lets User Scroll the dropdown list-->
                     <ScrollViewer x:Name="DropDownScrollViewer">
                         <!--ComboBox Items-->

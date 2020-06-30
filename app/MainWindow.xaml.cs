@@ -105,6 +105,8 @@ namespace app
             string name = button.Name;
             this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
         }
+
+   
     }
 }
 
