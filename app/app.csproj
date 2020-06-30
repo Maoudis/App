@@ -7,12 +7,36 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Items\" />
-    <Folder Include="Icons\" />
+    <Compile Remove="Items\**" />
+    <EmbeddedResource Remove="Items\**" />
+    <None Remove="Items\**" />
+    <Page Remove="Items\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\cow.png" />
+    <None Remove="Icons\doctor.png" />
+    <None Remove="Icons\shop.png" />
+    <None Remove="Icons\sword.png" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\cow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\doctor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\shop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\sword.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

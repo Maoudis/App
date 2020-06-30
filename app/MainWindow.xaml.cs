@@ -22,11 +22,13 @@ namespace app
     /// </summary>
     public partial class MainWindow : Window
     {
+        string currentDir;
         public MainWindow()
         {
             InitializeComponent();
-            
+            currentDir = GetCurrentDir();
         }
+
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -36,6 +38,12 @@ namespace app
         }
 
         
+        private string GetCurrentDir()
+        {
+            string currentDir = Directory.GetCurrentDirectory();
+            string ProjectFolder = Directory.GetParent(currentDir).Parent.Parent.FullName;
+            return ProjectFolder;
+        }
         
         private void RaceDropdown_RaceChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -45,7 +53,7 @@ namespace app
             var combo = (ComboBox)sender;//Var Combo = (type of ComboBox)From the Sender of RaceDropdown_RaceChanged
             var value = (ComboBoxItem)combo.SelectedItem;//var value = (type of ComboBoxitem)the selected item of the comboBox
             string race = (string)value.Name;//Gets the name of the ComboBoxItem           
-            string DisplatInfo = File.ReadAllText($@"C:\Users\Maoud\source\repos\App\app\RaceClassInfo\Race\{race}.txt");
+            string DisplatInfo = File.ReadAllText($@"{currentDir}\RaceClassInfo\Race\{race}.txt");
             this.RaceInfoDisplay.Text = (string)DisplatInfo;
         }
 
@@ -56,7 +64,7 @@ namespace app
             var combo = (ComboBox)sender;
             var value = (ComboBoxItem)combo.SelectedItem;
             string PlayerClass = (string)value.Name;
-            string DisplayInfo = File.ReadAllText($@"C:\Users\Maoud\source\repos\App\app\RaceClassInfo\Class\{PlayerClass}.txt");
+            string DisplayInfo = File.ReadAllText($@"{currentDir}\RaceClassInfo\Class\{PlayerClass}.txt");
             this.ClassInfoDisplay.Text = (string)DisplayInfo;
         }
 
@@ -69,7 +77,25 @@ namespace app
             this.AgeTextBox.Text = "";
         }
 
-        private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+ 
+        private void Farmer_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = (Button)sender;
+            string name = button.Name;
+            this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
+        }
+
+        private void Doctor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ShopKeeper_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Kight_Click(object sender, RoutedEventArgs e)
         {
 
         }
