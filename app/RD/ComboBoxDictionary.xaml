@@ -38,10 +38,12 @@
     </Style>
 
     <Style x:Key="StanderdTextBlock" TargetType="TextBlock" >
+
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="2" />
+        <Setter Property="TextDecorations" Value="UnderLine"/>
     </Style>
 
     <Style TargetType="Button">
@@ -56,7 +58,8 @@
         <Setter Property="BorderBrush" Value="{StaticResource Black}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Background" Value="{StaticResource TextBoxGey}"/>
-        <Setter Property="TextWrapping" Value="Wrap"
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        
         <Setter Property="FontSize" Value="15" />
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="1"/>
