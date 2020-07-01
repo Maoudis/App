@@ -252,6 +252,8 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="2*"/>
                     </Grid.RowDefinitions>
+                    
+                    <!--#region Starting Equitment-->
                     <TextBlock Style="{StaticResource StandardTextBlock}" Text="Your Staerting Equitment"/>
                     <Border  Style="{StaticResource GrayBackBorderStyle}">
                         <Grid Margin="2">
@@ -265,13 +267,27 @@
                             <Button Style="{StaticResource StyleStandardButton}" Grid.Column="1"/>
                             <Button Style="{StaticResource StyleStandardButton}" Grid.Column="2"/>
                             <Button Style="{StaticResource StyleStandardButton}" Grid.Column="3"/>
-                        </Grid>
-                        
+                        </Grid>                        
                     </Border>
-                    <TextBlock Style="{StaticResource StandardTextBlock}" Text="Your Staerting Equitment" Grid.Row="1"/>
+                    <!--#endregion-->
+                    
+                    <!--#region Select one Item-->
+                    <TextBlock Style="{StaticResource StandardTextBlock}" Text="Select one Item" Grid.Row="1"/>
                     <Border Style="{StaticResource GrayBackBorderStyle}" Grid.Row="1">
-
+                        <Grid Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Style="{StaticResource StyleStandardButton}"/>
+                            <Button Style="{StaticResource StyleStandardButton}" Grid.Column="1"/>
+                            <Button Style="{StaticResource StyleStandardButton}" Grid.Column="2"/>
+                            <Button Style="{StaticResource StyleStandardButton}" Grid.Column="3"/>
+                        </Grid>
                     </Border>
+                    <!--#endregion-->
 
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
@@ -298,9 +314,9 @@
 
             <!--#region Box 4-->
             <Border Style="{StaticResource StandardBorderStyle}" Grid.Row="1" Grid.Column="1">
-
+                
+                <ScrollBar />
             </Border>
-
             <!--#endregion-->
         </Grid>
     </Border>
