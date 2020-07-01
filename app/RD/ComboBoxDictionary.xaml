@@ -38,7 +38,7 @@
 
     <!--#region Style GrayBackBorder-->
     <Style x:Key="GrayBackBorderStyle" TargetType="Border">
-        
+        <Setter Property="CornerRadius" Value="10"/>
         <Setter Property="Margin" Value="2,25,2,2"/>
         <Setter Property="Background" Value="{StaticResource ColorBloodRed}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
@@ -71,7 +71,7 @@
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Background" Value="{StaticResource ColorQuickSilver}"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
-        
+        <Setter Property="Template" Value="{DynamicResource TextBoxRounded}"/>
         <Setter Property="FontSize" Value="15" />
         <Setter Property="FontFamily" Value="century gothic" />
         <Setter Property="Margin" Value="1"/>
@@ -79,10 +79,23 @@
     </Style>
     <!--#endregion -->
 
+    <!--#region TextBox Template-->
+    <ControlTemplate x:Key="TextBoxRounded" TargetType="{x:Type TextBoxBase}">
+        <Border x:Name="border" CornerRadius="10" Background="{StaticResource ColorQuickSilver}" BorderThickness="2" BorderBrush="{StaticResource ColorBlack}" SnapsToDevicePixels="True">
+            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ColorBlack}"/>
+            </Trigger>
 
-
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--#endregion-->
+    
+    
+    
     <!--#region Style StandardComboBox-->
-
     <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -163,7 +176,7 @@
     <!--#endregion-->
     
     
-  
+    <!--#region Button template-->
     <ControlTemplate x:Key="ButtonRounedEdge" TargetType="{x:Type ButtonBase}">
         <Border x:Name="border" Background="{StaticResource ColorQuickSilver}" CornerRadius="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{StaticResource ColorBlack}" SnapsToDevicePixels="true">
             <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="2" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
@@ -180,9 +193,12 @@
                 <Setter Property="Background" TargetName="border" Value="#D6D6D6"/>
                 <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ColorBlack}"/>
             </Trigger>
-            
+        
         </ControlTemplate.Triggers>
     </ControlTemplate>
-
+    <!--#endregion-->
+    
+    
+    
 </ResourceDictionary>
  
