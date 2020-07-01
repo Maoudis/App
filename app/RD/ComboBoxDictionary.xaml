@@ -35,6 +35,16 @@
         <Setter Property="BorderThickness" Value="4"/>
     </Style>
     <!--#endregion-->
+
+    <!--#region Style GrayBackBorder-->
+    <Style x:Key="GrayBackBorderStyle" TargetType="Border">
+        
+        <Setter Property="Margin" Value="2,25,2,2"/>
+        <Setter Property="Background" Value="{StaticResource ColorBloodRed}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
+        <Setter Property="BorderThickness" Value="4"/>
+    </Style>
+    <!--#endregion-->
     <!--#region Style StandardTextBlock-->
     <Style x:Key="StandardTextBlock" TargetType="TextBlock" >
         <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -51,10 +61,12 @@
         <Setter Property="Background" Value="{StaticResource ColorQuickSilver}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
+        <Setter Property="Template" Value="{DynamicResource ButtonRounedEdge}"/>
     </Style>
     <!--#endregion-->
     <!--#region Style StandardTextBox-->
     <Style x:Key="StandardTextBox" TargetType="TextBox">
+        
         <Setter Property="BorderBrush" Value="{StaticResource ColorBlack}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="Background" Value="{StaticResource ColorQuickSilver}"/>
@@ -66,9 +78,9 @@
         
     </Style>
     <!--#endregion -->
-    <!--#region Style Image As Button-->
-    
-    <!--#endregion-->
+
+
+
     <!--#region Style StandardComboBox-->
 
     <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
@@ -76,12 +88,14 @@
         <Setter Property="IsTabStop" Value="false"/>
         <Setter Property="Focusable" Value="False"/>
         <Setter Property="ClickMode" Value="Press"/>
+        
 
         <Setter Property="Template">
             <Setter.Value>
+            <!--#region MainBox-->
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <!--Border of main box-->
-                    <Border x:Name="templateRoot" Background="{StaticResource ColorQuickSilver}" BorderThickness="2"  BorderBrush="{StaticResource ColorBlack}" SnapsToDevicePixels="true">
+                    <Border x:Name="templateRoot" CornerRadius="10" Background="{StaticResource ColorQuickSilver}" BorderThickness="2"  BorderBrush="{StaticResource ColorBlack}" SnapsToDevicePixels="true">
                         <!--Border of arrow-->
                         <Border x:Name="splitBorder" BorderThickness="2" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0" SnapsToDevicePixels="true" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
                             <!--Draws the arrow-->
@@ -114,6 +128,7 @@
 
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
+            <!--#endregion-->
             </Setter.Value>
         </Setter>
     </Style>
@@ -127,7 +142,7 @@
             <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}">
 
                 <!--The Border of the ComboBoxItems-->
-                <Border x:Name="dropDownBorder" Background="{StaticResource ColorQuickSilver}" BorderThickness="1" BorderBrush="{StaticResource ColorBlack}"  MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                <Border x:Name="dropDownBorder" CornerRadius="10" Background="{StaticResource ColorQuickSilver}" BorderThickness="1" BorderBrush="{StaticResource ColorBlack}"  MinWidth="{Binding ActualWidth, ElementName=templateRoot}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
                     <!--Lets User Scroll the dropdown list-->
                     <ScrollViewer x:Name="DropDownScrollViewer">
                         <!--ComboBox Items-->
@@ -145,7 +160,29 @@
         </Grid>
 
     </ControlTemplate>
-
     <!--#endregion-->
+    
+    
+  
+    <ControlTemplate x:Key="ButtonRounedEdge" TargetType="{x:Type ButtonBase}">
+        <Border x:Name="border" Background="{StaticResource ColorQuickSilver}" CornerRadius="10" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{StaticResource ColorBlack}" SnapsToDevicePixels="true">
+            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="2" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Button.IsDefaulted" Value="true">
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" TargetName="border" Value="{StaticResource MauseOverOrClickforQuickSilver}"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ColorBlack}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" TargetName="border" Value="#D6D6D6"/>
+                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource ColorBlack}"/>
+            </Trigger>
+            
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
 </ResourceDictionary>
  
