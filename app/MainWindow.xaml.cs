@@ -106,7 +106,7 @@ namespace app
             this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
         }
 
-   
+
     }
 }
 
