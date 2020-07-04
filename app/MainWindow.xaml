@@ -216,19 +216,19 @@
 
                             <!--Farmer-->
                             <Button x:Name="Farmer" Style="{StaticResource StyleStandardButton}" Click="Farmer_Click">
-                                <Image Source="/Icons/cow.png"/>
+                                <Image Source="/Icons/Professions/cow.png"/>
                             </Button>
                             <!--Doctor-->
                             <Button x:Name="Doctor" Style="{StaticResource StyleStandardButton}" Grid.Column="1" Click="Doctor_Click">
-                                <Image Source="/Icons/doctor.png"/>
+                                <Image Source="/Icons/Professions/doctor.png"/>
                             </Button>
                             <!--ShopKeeper-->
                             <Button x:Name="ShopKeeper" Style="{StaticResource StyleStandardButton}" Grid.Row="1" Click="ShopKeeper_Click">
-                                <Image Source="/Icons/shop.png"/>
+                                <Image Source="/Icons/Professions/shop.png"/>
                             </Button>
                             <!--Kight-->
                             <Button x:Name="Kight" Style="{StaticResource StyleStandardButton}" Grid.Column="1" Grid.Row="1" Click="Kight_Click">
-                                <Image Source="/Icons/sword.png"/>
+                                <Image Source="/Icons/Professions/sword.png"/>
                             </Button>
 
                         </Grid>
@@ -375,7 +375,7 @@
                     </Grid.RowDefinitions>
 
 
-                    <TextBox Margin="4.5" Style="{StaticResource StandardTextBox}" TextChanged="TextBox_TextChanged"/>
+                    <TextBox Margin="4.5" Style="{StaticResource StandardTextBox}"/>
 
                     <TextBox Margin="4.5" Style="{StaticResource StandardTextBox}" Grid.Row="1"/>
 

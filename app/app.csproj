@@ -25,16 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Icons\cow.png">
+    <Resource Include="Icons\Professions\cow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Icons\doctor.png">
+    <Resource Include="Icons\Professions\doctor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Icons\shop.png">
+    <Resource Include="Icons\Professions\shop.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Icons\sword.png">
+    <Resource Include="Icons\Professions\sword.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
