@@ -267,13 +267,13 @@
                             
                             
                             <TextBox Style="{StaticResource StandardTextBox}"/>
-                            <Image x:Name="classItem1" Source="/Icons/Items/battleMage_Item1.png" Margin="5"/>
+                            <Image x:Name="classItem1" Source="/Icons/Items/divineBrawler_Item1.png" Margin="5"/>
                             
                             <TextBox Style="{StaticResource StandardTextBox}" Grid.Column="1"/>
-                            <Image x:Name="classItem2" Source="/Icons/Items/battleMage_Item2.png" Grid.Column="1" Margin="5"/>
+                            <Image x:Name="classItem2" Source="/Icons/Items/divineBrawler_Item2.png" Grid.Column="1" Margin="5"/>
                             
                             <TextBox Style="{StaticResource StandardTextBox}" Grid.Column="2"/>
-                            <Image x:Name="RaceItem" Source="/Icons/Items/human_Item.png" Grid.Column="2" Margin="5"/>
+                            <Image x:Name="RaceItem" Source="/Icons/Items/Race/human_Item.png" Grid.Column="2" Margin="5"/>
                             
                             <!--#region Profession Item-->
                             <TextBox Style="{StaticResource StandardTextBox}" Grid.Column="3"/>

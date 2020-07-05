@@ -45,7 +45,8 @@ namespace app
             string ProjectFolder = Directory.GetParent(currentDir).Parent.Parent.FullName;
             return ProjectFolder;
         }
-        
+
+        #region Pick Race
         private void RaceDropdown_RaceChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.RaceInfoDisplay == null)
@@ -62,7 +63,9 @@ namespace app
             var bitmap = new BitmapImage(uri);
             this.RaceItem.Source = bitmap;
         }
+        #endregion
 
+        #region Pick Class 
         private void ClassDropdown_ClassChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.ClassInfoDisplay == null)
@@ -82,11 +85,10 @@ namespace app
             var uri2 = new Uri($@"{currentDir}/Icons/Items/{PlayerClass}_Item2.png");
             var bitmap2 = new BitmapImage(uri2);
             this.classItem2.Source = bitmap2;
-
-            
-
         }
+        #endregion
 
+        #region Detail
         private void ClearNameButton_Click(object sender, RoutedEventArgs e)
         {
             this.NameTextBox.Text = "";
@@ -95,8 +97,9 @@ namespace app
         {
             this.AgeTextBox.Text = "";
         }
+        #endregion
 
- 
+        #region Profession buttions
         private void Farmer_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
@@ -137,7 +140,7 @@ namespace app
             var bitmap = new BitmapImage(uri);
             this.ProfessionItem.Source = bitmap;
         }
-
+        #endregion
 
     }
 }
