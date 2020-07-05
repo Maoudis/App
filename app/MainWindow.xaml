@@ -68,19 +68,19 @@
                             <!--Rcae-->
                             <TextBlock Style="{StaticResource StandardTextBlock}" Text="Race" />
                             <ComboBox Background="Red" SelectedIndex="0" x:Name="RaceDropdown"  SelectionChanged="RaceDropdown_RaceChanged">
-                                <ComboBoxItem x:Name="Human" Content="The Humans"/>
-                                <ComboBoxItem x:Name="Insectoid" Content="The insectoids" />
-                                <ComboBoxItem x:Name="Lizardfolk" Content="The Lizardfolk" />
-                                <ComboBoxItem x:Name="Canidaes" Content="The Canidaes" />
+                                <ComboBoxItem x:Name="human" Content="The Humans"/>
+                                <ComboBoxItem x:Name="insectoid" Content="The insectoids" />
+                                <ComboBoxItem x:Name="lizardFolk" Content="The Lizardfolk" />
+                                <ComboBoxItem x:Name="canidae" Content="The Canidaes" />
                             </ComboBox>
 
                             <!--Class-->
                             <TextBlock Style="{StaticResource StandardTextBlock}" Text="Class" />
                             <ComboBox SelectedIndex="0" x:Name="ClassDropdown"  SelectionChanged="ClassDropdown_ClassChanged">
-                                <ComboBoxItem x:Name="DivineBrawlerInfo" Content="Divine Brawler"/>
-                                <ComboBoxItem x:Name="BattleMageInfo" Content="Battle Mage" />
-                                <ComboBoxItem x:Name="ShieldkightInfo" Content="Shield Knight" />
-                                <ComboBoxItem x:Name="PowerDruidInfo" Content="Power Druid" />
+                                <ComboBoxItem x:Name="divineBrawler" Content="Divine Brawler"/>
+                                <ComboBoxItem x:Name="battleMage" Content="Battle Mage" />
+                                <ComboBoxItem x:Name="shieldKnight" Content="Shield Knight" />
+                                <ComboBoxItem x:Name="warDruid" Content="War Druid" />
                             </ComboBox>
                         </StackPanel>
                         <!--#endregion-->
@@ -215,19 +215,19 @@
                             </Grid.RowDefinitions>
 
                             <!--Farmer-->
-                            <Button x:Name="Farmer" Style="{StaticResource StyleStandardButton}" Click="Farmer_Click">
+                            <Button x:Name="farmer" Style="{StaticResource StyleStandardButton}" Click="Farmer_Click">
                                 <Image Source="/Icons/Professions/cow.png"/>
                             </Button>
                             <!--Doctor-->
-                            <Button x:Name="Doctor" Style="{StaticResource StyleStandardButton}" Grid.Column="1" Click="Doctor_Click">
+                            <Button x:Name="doctor" Style="{StaticResource StyleStandardButton}" Grid.Column="1" Click="Doctor_Click">
                                 <Image Source="/Icons/Professions/doctor.png"/>
                             </Button>
                             <!--ShopKeeper-->
-                            <Button x:Name="ShopKeeper" Style="{StaticResource StyleStandardButton}" Grid.Row="1" Click="ShopKeeper_Click">
+                            <Button x:Name="shopKeeper" Style="{StaticResource StyleStandardButton}" Grid.Row="1" Click="ShopKeeper_Click">
                                 <Image Source="/Icons/Professions/shop.png"/>
                             </Button>
                             <!--Kight-->
-                            <Button x:Name="Kight" Style="{StaticResource StyleStandardButton}" Grid.Column="1" Grid.Row="1" Click="Kight_Click">
+                            <Button x:Name="soldier" Style="{StaticResource StyleStandardButton}" Grid.Column="1" Grid.Row="1" Click="Soldier_Click">
                                 <Image Source="/Icons/Professions/sword.png"/>
                             </Button>
 
@@ -264,10 +264,23 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Button Style="{StaticResource StyleStandardButton}"/>
-                            <Button Style="{StaticResource StyleStandardButton}" Grid.Column="1"/>
-                            <Button Style="{StaticResource StyleStandardButton}" Grid.Column="2"/>
-                            <Button Style="{StaticResource StyleStandardButton}" Grid.Column="3"/>
+                            
+                            
+                            <TextBox Style="{StaticResource StandardTextBox}"/>
+                            <Image x:Name="classItem1" Source="/Icons/Items/battleMage_Item1.png" Margin="5"/>
+                            
+                            <TextBox Style="{StaticResource StandardTextBox}" Grid.Column="1"/>
+                            <Image x:Name="classItem2" Source="/Icons/Items/battleMage_Item2.png" Grid.Column="1" Margin="5"/>
+                            
+                            <TextBox Style="{StaticResource StandardTextBox}" Grid.Column="2"/>
+                            <Image x:Name="RaceItem" Source="/Icons/Items/human_Item.png" Grid.Column="2" Margin="5"/>
+                            
+                            <!--#region Profession Item-->
+                            <TextBox Style="{StaticResource StandardTextBox}" Grid.Column="3"/>
+                            <Image x:Name="ProfessionItem" Source="/Icons/Items/farmer_Item.png" Grid.Column="3" Margin="5"/>
+                            <!--#endregion-->
+
+
                         </Grid>
                     </Border>
                     <!--#endregion-->
@@ -296,25 +309,34 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <TextBlock Style="{StaticResource StandardTextBlock}" Text="Your Staerting Equitment"/>
+                        <TextBlock Style="{StaticResource StandardTextBlock}" Text="Abilities"/>
                         <Border Style="{StaticResource GrayBackBorderStyle}" Grid.Row="2">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
+                                    <RowDefinition Height="4*"/>
+                                    <RowDefinition Height="4*"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
-                                <Button Style="{StaticResource StyleStandardButton}"/>
-
-                                <Button Style="{StaticResource StyleStandardButton}" Grid.Column="1"/>
-
-                                <Button Style="{StaticResource StyleStandardButton}" Grid.Row="1"/>
+                                <Button Style="{StaticResource StyleStandardButton}" Grid.Column="0" Grid.Row="1"/>
 
                                 <Button Style="{StaticResource StyleStandardButton}" Grid.Column="1" Grid.Row="1"/>
+
+                                <Button Style="{StaticResource StyleStandardButton}" Grid.Column="2" Grid.Row="1"/>
+
+                                <Button Style="{StaticResource StyleStandardButton}" Grid.Column="0" Grid.Row="2"/>
+
+                                <Button Style="{StaticResource StyleStandardButton}" Grid.Column="1" Grid.Row="2"/>
+
+                                <Button Style="{StaticResource StyleStandardButton}" Grid.Column="2" Grid.Row="2"/>
+
+
                             </Grid>
 
                         </Border>

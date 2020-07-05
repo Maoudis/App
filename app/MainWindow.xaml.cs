@@ -22,6 +22,7 @@ namespace app
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Player Player = new Player();
         string currentDir;
         public MainWindow()
         {
@@ -52,20 +53,38 @@ namespace app
 
             var combo = (ComboBox)sender;//Var Combo = (type of ComboBox)From the Sender of RaceDropdown_RaceChanged
             var value = (ComboBoxItem)combo.SelectedItem;//var value = (type of ComboBoxitem)the selected item of the comboBox
-            string race = (string)value.Name;//Gets the name of the ComboBoxItem           
+            string race = (string)value.Name;//Gets the name of the ComboBoxItem    
+            
             string DisplatInfo = File.ReadAllText($@"{currentDir}\RaceClassInfo\Race\{race}\{race}RaceInfo.txt");
             this.RaceInfoDisplay.Text = (string)DisplatInfo;
+
+            var uri = new Uri($@"{currentDir}/Icons/Items/Race/{race}_Item.png");
+            var bitmap = new BitmapImage(uri);
+            this.RaceItem.Source = bitmap;
         }
 
         private void ClassDropdown_ClassChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.ClassInfoDisplay == null)
                 return;
+
             var combo = (ComboBox)sender;
             var value = (ComboBoxItem)combo.SelectedItem;
             string PlayerClass = (string)value.Name;
+
             string DisplayInfo = File.ReadAllText($@"{currentDir}\RaceClassInfo\Class\{PlayerClass}.txt");
             this.ClassInfoDisplay.Text = (string)DisplayInfo;
+
+            var uri = new Uri($@"{currentDir}/Icons/Items/{PlayerClass}_Item1.png");
+            var bitmap = new BitmapImage(uri);
+            this.classItem1.Source = bitmap;
+
+            var uri2 = new Uri($@"{currentDir}/Icons/Items/{PlayerClass}_Item2.png");
+            var bitmap2 = new BitmapImage(uri2);
+            this.classItem2.Source = bitmap2;
+
+            
+
         }
 
         private void ClearNameButton_Click(object sender, RoutedEventArgs e)
@@ -83,6 +102,10 @@ namespace app
             Button button = (Button)sender;
             string name = button.Name;
             this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
+            var uri = new Uri($@"{currentDir}/Icons/Items/{name}_Item.png");
+            var bitmap = new BitmapImage(uri);
+            this.ProfessionItem.Source = bitmap;
+
         }
 
         private void Doctor_Click(object sender, RoutedEventArgs e)
@@ -90,6 +113,9 @@ namespace app
             Button button = (Button)sender;
             string name = button.Name;
             this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
+            var uri = new Uri($@"{currentDir}/Icons/Items/{name}_Item.png");
+            var bitmap = new BitmapImage(uri);
+            this.ProfessionItem.Source = bitmap;
         }
 
         private void ShopKeeper_Click(object sender, RoutedEventArgs e)
@@ -97,13 +123,19 @@ namespace app
             Button button = (Button)sender;
             string name = button.Name;
             this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
+            var uri = new Uri($@"{currentDir}/Icons/Items/{name}_Item.png");
+            var bitmap = new BitmapImage(uri);
+            this.ProfessionItem.Source = bitmap;
         }
 
-        private void Kight_Click(object sender, RoutedEventArgs e)
+        private void Soldier_Click(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
             string name = button.Name;
             this.ProfessionInfoDisplay.Text = File.ReadAllText($@"{currentDir}\Professions\{name}.txt");
+            var uri = new Uri($@"{currentDir}/Icons/Items/{name}_Item.png");
+            var bitmap = new BitmapImage(uri);
+            this.ProfessionItem.Source = bitmap;
         }
 
 

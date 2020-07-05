@@ -4,7 +4,7 @@ using System.Text;
 
 namespace app
 {
-    class Player
+    public class Player
     {
         string Name;
         int Age;

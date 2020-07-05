@@ -16,8 +16,27 @@
   <ItemGroup>
     <None Remove="Icons\cow.png" />
     <None Remove="Icons\doctor.png" />
+    <None Remove="Icons\Items\battleMage_Item1.png" />
+    <None Remove="Icons\Items\battleMage_Item2.png" />
+    <None Remove="Icons\Items\canidae_Item.png" />
+    <None Remove="Icons\Items\divineBrawler_Item1.png" />
+    <None Remove="Icons\Items\divineBrawler_Item2.png" />
+    <None Remove="Icons\Items\doctor_Item.png" />
+    <None Remove="Icons\Items\Farmer_Item.png" />
+    <None Remove="Icons\Items\human_Item.png" />
+    <None Remove="Icons\Items\insectoids_Item.png" />
+    <None Remove="Icons\Items\lizardFolk_Item.png" />
+    <None Remove="Icons\Items\shieldKnight_Item1.png" />
+    <None Remove="Icons\Items\shieldKnight_Item2.png" />
+    <None Remove="Icons\Items\shopKeeper_Item.png" />
+    <None Remove="Icons\Items\soldier_Item.png" />
+    <None Remove="Icons\Items\warDruid_Item1.png" />
     <None Remove="Icons\shop.png" />
     <None Remove="Icons\sword.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include=".cs Files\Player.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +44,51 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icons\Items\battleMage_Item1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\battleMage_Item2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\Race\canidae_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\divineBrawler_Item1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\divineBrawler_Item2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\doctor_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\Farmer_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\Race\human_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\Race\insectoids_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\Race\lizardFolk_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\shieldKnight_Item2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\shieldKnight_Item1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\shopKeeper_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\soldier_Item.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\Items\warDruid_Item1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Icons\Professions\cow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
